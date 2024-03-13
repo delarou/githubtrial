@@ -13,8 +13,7 @@
 		<RepositoryType>git</RepositoryType>
 		<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
 		<Authors>Christoph De Baene</Authors>
-		<Description>GitTrial Library</Description>
-		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<Description>GitTrial Library</Description>		
 		<MinVerIgnoreHeight>true</MinVerIgnoreHeight>
 		<MinVerTagPrefix>v</MinVerTagPrefix>
 		<MinVerVerbosity>normal</MinVerVerbosity>
@@ -30,5 +29,10 @@
   <ItemGroup>
     <ProjectReference Include="..\SomeProject\SomeProject.csproj" />
   </ItemGroup>
+
+  <Target Name="SpicNSpan" AfterTargets="Clean">
+		<RemoveDir Directories="$(BaseOutputPath)" />
+		<RemoveDir Directories="$(BaseIntermediateOutputPath)" /> 
+  </Target>
 
 </Project>
